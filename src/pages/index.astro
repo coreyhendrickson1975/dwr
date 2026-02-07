@@ -1,0 +1,51 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import HeroSection from '../components/HeroSection.astro';
+import LoglineSection from '../components/LoglineSection.astro';
+import FilmSummarySection from '../components/FilmSummarySection.astro';
+import ThreeActsSection from '../components/ThreeActsSection.astro';
+import TopicSummarySection from '../components/TopicSummarySection.astro';
+import GallerySection from '../components/GallerySection.astro';
+import ContributorsSection from '../components/ContributorsSection.astro';
+import QuoteSection from '../components/QuoteSection.astro';
+import DistributionSection from '../components/DistributionSection.astro';
+import FilmTeamSection from '../components/FilmTeamSection.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+---
+
+<Layout
+  title="The Distance We Run | A Vermont Documentary on Recovery, Endurance & Community"
+  description="The Distance We Run is a documentary film following a Vermont father who transforms grief from opioid loss into ultramarathon trail running and builds a grassroots recovery community across New England."
+>
+  <SiteHeader />
+  <main>
+    <HeroSection />
+    <div id="logline">
+      <LoglineSection />
+    </div>
+    <div id="film">
+      <FilmSummarySection />
+    </div>
+    <div id="acts">
+      <ThreeActsSection />
+    </div>
+    <div id="topic">
+      <TopicSummarySection />
+    </div>
+    <QuoteSection />
+    <div id="gallery">
+      <GallerySection />
+    </div>
+    <div id="team">
+      <ContributorsSection />
+    </div>
+    <div id="distribution">
+      <DistributionSection />
+    </div>
+    <div id="film-team">
+      <FilmTeamSection />
+    </div>
+  </main>
+  <SiteFooter />
+</Layout>

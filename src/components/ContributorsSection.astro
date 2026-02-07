@@ -1,0 +1,71 @@
+---
+const contributors = [
+  {
+    name: 'Chip Piper',
+    role: 'Athlete & Founder TR4R',
+    image: '/images/CHIP.jpg',
+    imagePosition: 'center',
+    bio: 'Trail Run 4 Recovery, founded by Chip Piper in 2022, was initially created as a fundraising effort to support local nonprofit recovery organizations. Chip has since completed two major milestones — 5 trail marathons in 5 days in 2023 and 10 trail marathons in 10 days in 2024 — raising over $50K through a grassroots campaign for nonprofits supporting recovery and those suffering from substance use disorders.',
+  },
+  {
+    name: 'Dawn and Greg Tatro',
+    role: 'Founders of Jenna\'s Promise',
+    image: '/images/greg-dawn-2.jpg',
+    imagePosition: 'top',
+    bio: 'Dawn and Greg Tatro are Vermont-based founders of the non-profit organization Jenna\'s Promise, established to support women in addiction recovery following the death of their daughter, Jenna Tatro, from a fentanyl overdose in 2019 at age 26.',
+  },
+  {
+    name: 'Danielle Wallace',
+    role: 'Executive Director, Turning Point Center Addison County',
+    image: '/images/danielle-wallace.jpg.webp',
+    imagePosition: 'center',
+    bio: 'Danielle has her Master of Art in Restorative Justice through the Vermont Law School.',
+  },
+  {
+    name: 'Andy Weinberg',
+    role: 'Founder of The Endurance Society',
+    image: '/images/Andy_Weinberg_01.jpg',
+    imagePosition: 'center 15%',
+    bio: 'Andy is a Professor of Health & Exercise Science at Vermont State University in Castleton. He has also participated in 100 mile running races, long distance swimming events, and even a quintuple iron man distance triathlon (12 miles swim/560 mile bike/131 mile run). He is a strong believer that adversity defines the path to success.',
+  },
+];
+---
+
+<section class="py-24 md:py-32 px-6 bg-secondary">
+  <div class="max-w-5xl mx-auto">
+    <div class="text-center mb-16">
+      <p class="text-xs tracking-[0.3em] uppercase text-primary mb-4 font-sans">
+        The Team
+      </p>
+      <h2 class="text-3xl md:text-4xl font-serif text-foreground">
+        Primary Contributors
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      {contributors.map((person) => (
+        <div class="group">
+          <div class="relative aspect-[3/4] overflow-hidden rounded-sm mb-4">
+            <img
+              src={person.image}
+              alt={`Portrait of ${person.name}`}
+              class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+              style={`object-position: ${person.imagePosition}`}
+              loading="lazy"
+            />
+          </div>
+          <h3 class="text-lg font-serif text-foreground">
+            {person.name}
+          </h3>
+          <p class="text-xs tracking-[0.2em] uppercase text-primary mt-1 font-sans">
+            {person.role}
+          </p>
+          <div class="w-8 h-px bg-border my-3"></div>
+          <p class="text-sm text-muted-foreground leading-relaxed font-sans">
+            {person.bio}
+          </p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

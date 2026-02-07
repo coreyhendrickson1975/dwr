@@ -1,0 +1,79 @@
+---
+---
+
+<header
+  id="site-header"
+  class="site-header fixed top-0 left-0 right-0 z-50 transition-all duration-300 px-6 py-4"
+>
+  <nav class="max-w-6xl mx-auto flex items-center justify-between">
+    <a href="#" class="text-sm font-serif text-foreground tracking-wide">
+      The Distance We Run
+    </a>
+    <ul class="hidden md:flex items-center gap-8">
+      <li>
+        <a
+          href="#logline"
+          class="text-xs tracking-[0.15em] uppercase text-muted-foreground hover:text-foreground transition-colors font-sans"
+        >
+          Logline
+        </a>
+      </li>
+      <li>
+        <a
+          href="#film"
+          class="text-xs tracking-[0.15em] uppercase text-muted-foreground hover:text-foreground transition-colors font-sans"
+        >
+          Film
+        </a>
+      </li>
+      <li>
+        <a
+          href="#topic"
+          class="text-xs tracking-[0.15em] uppercase text-muted-foreground hover:text-foreground transition-colors font-sans"
+        >
+          Topic
+        </a>
+      </li>
+      <li>
+        <a
+          href="#gallery"
+          class="text-xs tracking-[0.15em] uppercase text-muted-foreground hover:text-foreground transition-colors font-sans"
+        >
+          Gallery
+        </a>
+      </li>
+      <li>
+        <a
+          href="#team"
+          class="text-xs tracking-[0.15em] uppercase text-muted-foreground hover:text-foreground transition-colors font-sans"
+        >
+          Team
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<style>
+  .site-header {
+    background: transparent;
+  }
+  .site-header.scrolled {
+    background: hsl(var(--background) / 0.9);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid hsl(var(--border));
+  }
+</style>
+
+<script>
+  const header = document.getElementById('site-header');
+  if (header) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+  }
+</script>

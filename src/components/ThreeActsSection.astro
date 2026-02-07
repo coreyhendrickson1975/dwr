@@ -1,0 +1,56 @@
+---
+const acts = [
+  {
+    number: 'I',
+    title: 'Love & Loss',
+    description:
+      'The film opens with an intimate, recollected portrait of Chip and his son Michael. Despite the tumultuous periods, the relationship was grounded in love, place, and the bonds they shared. Through family stories and everyday moments, Michael is introduced not through his passing, but through his life and spirit. The inciting incident arrives with Michael\'s death from substance use disorder, a rupture that reshapes Chip\'s world. Grief becomes the film\'s first landscape. A new existence that feels unfixed, unresolved, and introduces a broken-hearted father searching for meaning.',
+  },
+  {
+    number: 'II',
+    title: 'Endurance as Purpose',
+    description:
+      'In the aftermath of loss, Chip looks for ways to remain close to Michael, spending time in the natural world and pushing his body through long-distance running as a form of connection, healing and survival. What begins as private endurance slowly becomes public purpose, as Chip commits to raising awareness and supporting others in recovery. This path leads him to The Endurance Society and the daunting challenge of seemingly impossible physical feats. The Second Act culminates in Chip\'s renewed effort to complete the 100-mile Infinitus race, testing not only his physical limits but the intention behind every mile.',
+  },
+  {
+    number: 'III',
+    title: 'Beyond the Finish',
+    description:
+      'After the race, the film turns away from the spectacle of ultra events and toward what remains when the finish is behind him. Chip begins to translate the experience into sustained action, growing his recovery-focused organization and deepening his commitment to the recovery community. At the same time, he must confront the quieter challenge of his own recovery. How does one manage grief without training schedules and purpose without constant motion? The film closes on a reframing of healing, not as an arrival, but as an ongoing practice of presence, opportunity and community.',
+  },
+];
+---
+
+<section class="py-24 md:py-32 px-6 bg-secondary">
+  <div class="max-w-5xl mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16 mb-16">
+      <div class="md:col-span-4">
+        <p class="text-xs tracking-[0.3em] uppercase text-primary mb-4 font-sans">
+          Film Structure
+        </p>
+        <div class="w-12 h-px bg-primary/40"></div>
+      </div>
+      <div class="md:col-span-8">
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+      {acts.map((act) => (
+        <div class="flex flex-col">
+          <div class="flex items-baseline gap-3 mb-4">
+            <span class="text-4xl md:text-5xl font-serif text-primary/30">
+              {act.number}
+            </span>
+            <div class="flex-1 h-px bg-border"></div>
+          </div>
+          <h4 class="text-lg font-serif text-foreground mb-4">
+            {act.title}
+          </h4>
+          <p class="text-sm leading-relaxed text-muted-foreground font-sans">
+            {act.description}
+          </p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
