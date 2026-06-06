@@ -3,12 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import { SignupForm } from '../components/SignupForm';
 import { SceneSample } from '../components/SceneSample';
 
-const wistiaUrl = 'https://coreyhendrickson.wistia.com/s/da413qzeuvmhmia';
-let lastAdventureThumbnail: string | undefined;
-try {
-  const oembed = await fetch(`https://fast.wistia.com/oembed?url=${encodeURIComponent(wistiaUrl)}`).then(r => r.json());
-  lastAdventureThumbnail = oembed.thumbnail_url;
-} catch {}
+const lastAdventureThumbnail = '/lastadventurethumb.jpg';
 ---
 
 <Layout>
