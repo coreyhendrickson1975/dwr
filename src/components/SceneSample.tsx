@@ -5,9 +5,11 @@ interface SceneSampleProps {
   duration: string;
   description: string;
   sceneNumber: number;
+  videoUrl?: string;
+  thumbnailUrl?: string;
 }
 
-export function SceneSample({ title, duration, description }: SceneSampleProps) {
+export function SceneSample({ title, duration, description, videoUrl, thumbnailUrl }: SceneSampleProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -26,11 +28,15 @@ export function SceneSample({ title, duration, description }: SceneSampleProps) 
   return (
     <>
       <button onClick={() => setIsOpen(true)} className="group w-full text-left">
-        <div className="aspect-video bg-muted mb-4 flex items-center justify-center">
-          <svg className="w-8 h-8 text-muted-foreground/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
-            <path d="M7 11V7a5 5 0 0 1 10 0v4" />
-          </svg>
+        <div className="aspect-video bg-muted mb-4 flex items-center justify-center relative overflow-hidden">
+          {thumbnailUrl ? (
+            <img src={thumbnailUrl} alt={title} className="absolute inset-0 w-full h-full object-cover" />
+          ) : (
+            <svg className="w-8 h-8 text-muted-foreground/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+              <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+            </svg>
+          )}
         </div>
         <p className="text-xs text-muted-foreground mb-1">{duration}</p>
         <h3 className="text-sm text-foreground group-hover:underline">{title}</h3>
@@ -59,9 +65,17 @@ export function SceneSample({ title, duration, description }: SceneSampleProps) 
 
             {isUnlocked ? (
               <div className="space-y-4">
-                <div className="aspect-video bg-muted border border-border flex items-center justify-center">
-                  <p className="text-muted-foreground text-sm">Video player placeholder</p>
-                </div>
+                {videoUrl ? (
+                  <iframe
+                    src={videoUrl}
+                    className="w-full aspect-video border-0"
+                    allowFullScreen
+                  />
+                ) : (
+                  <div className="aspect-video bg-muted border border-border flex items-center justify-center">
+                    <p className="text-muted-foreground text-sm">Video player placeholder</p>
+                  </div>
+                )}
                 <p className="text-sm text-muted-foreground">{description}</p>
               </div>
             ) : (

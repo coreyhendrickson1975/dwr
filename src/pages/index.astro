@@ -2,6 +2,13 @@
 import Layout from '../layouts/Layout.astro';
 import { SignupForm } from '../components/SignupForm';
 import { SceneSample } from '../components/SceneSample';
+
+const wistiaUrl = 'https://coreyhendrickson.wistia.com/s/da413qzeuvmhmia';
+let lastAdventureThumbnail: string | undefined;
+try {
+  const oembed = await fetch(`https://fast.wistia.com/oembed?url=${encodeURIComponent(wistiaUrl)}`).then(r => r.json());
+  lastAdventureThumbnail = oembed.thumbnail_url;
+} catch {}
 ---
 
 <Layout>
@@ -59,8 +66,10 @@ import { SceneSample } from '../components/SceneSample';
             client:load
             sceneNumber={2}
             title="The Last Adventure"
-            duration="2:18"
+            duration="7:25"
             description="Michael's friend Dan recalls their last adventure together, a hike along Vermont's Long Trail."
+            videoUrl="https://coreyhendrickson.wistia.com/s/da413qzeuvmhmia"
+            thumbnailUrl={lastAdventureThumbnail}
           />
           <SceneSample
             client:load
